@@ -3,7 +3,7 @@
 This data release is meant to accompany and document the paper:
 
 “QED: An Extensible, Structured Framework for Explainable QuestionAnswering”
-by Matthew Lamm, Chris Alberti, Daniel Andor, Eunsol Choi, Jennimaria Palomaki, Livio Baldini Soares, Michael Collins
+by Matthew Lamm, Jennimaria Palomaki, Chris Alberti, Daniel Andor, Eunsol Choi, Livio Baldini Soares, Michael Collins
 
 The QED dataset is split into a training set of 5,000 examples and a validation set of 1,000 examples. Each QED example contains additional annotations for an example in the [Natural Questions](https://ai.google.com/research/NaturalQuestions) dataset. The additional annotation consists mainly of pairs of entity spans representing coreference links between the question and the answering passage in the NQ example. Please see the paper for a full description of the provided annotations.
 
