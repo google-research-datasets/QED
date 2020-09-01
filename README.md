@@ -17,18 +17,18 @@ The QED dataset consists of a training set of XX examples and a validation set o
 
 A QED example consists of an exmple from the [Natural Questions](https://ai.google.com/research/NaturalQuestions) dataset (NQ) and a QED-style explanation annotation where appropriate. It is a dictionary with the following items:
 
-1. **example_id** (int) := a unique identifier that matches up with NQ<br>
-1. **title_text** (str) := the title of the wikipedia page containing the paragraph<br>
-1. **url** (str) := the url of the wikipedia page containing the paragraph<br>
-1. **question_text** (str) := a natural language question from NQ<br>
-1. **paragraph_text** (str) := a paragraph from a wikipedia page containing the answer to question<br>
-1. **sentence_starts** (list(int)) := a list of character offsets indicating the start of sentences in the paragraph<br>
+1. **example_id** := a unique integer identifier that matches up with NQ<br>
+1. **title_text** := the title of the wikipedia page containing the paragraph<br>
+1. **url** := the url of the wikipedia page containing the paragraph<br>
+1. **question_text** := a natural language question string from NQ<br>
+1. **paragraph_text** := a paragraph string from a wikipedia page containing the answer to question<br>
+1. **sentence_starts** := a list of integer character offsets indicating the start of sentences in the paragraph<br>
 1. **original_nq_answers** (--) := <br>
-1. **annotation** (dict) := the QED annotation, with the following items: <br>
-    8.1. **referential_equalities** (list) := a list of dictionaries, one for each referential equality link annotated <br>
-    8.2. **answer** (list(dict)) := a list of dictionaries, one for each short answer annotated <br>
-    8.3. **selected_sentence** (dict) := a dictionary representing the annotated sentence in the passage<br>
-    8.4. **answer_type** (str): one of "single_sentence", "multi_sentence", or "none"
+1. **annotation** := the QED annotation, a dictionary with the following items and further elaborated upon below: <br>
+    8.1. **referential_equalities** := a list of dictionaries, one for each referential equality link annotated <br>
+    8.2. **answer** := a list of dictionaries, one for each short answer annotated <br>
+    8.3. **selected_sentence** := a dictionary representing the annotated sentence in the passage<br>
+    8.4. **answer_type** : one of "single_sentence", "multi_sentence", or "none"
     
 ### Annotation Format
 
