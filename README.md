@@ -23,7 +23,7 @@ A QED example consists of an exmple from the [Natural Questions](https://ai.goog
 1. **question_text** := a natural language question string from NQ<br>
 1. **paragraph_text** := a paragraph string from a wikipedia page containing the answer to question<br>
 1. **sentence_starts** := a list of integer character offsets indicating the start of sentences in the paragraph<br>
-1. **original_nq_answers** (--) := <br>
+1. **original_nq_answers** := <br>
 1. **annotation** := the QED annotation, a dictionary with the following items and further elaborated upon below: <br>
     8.1. **referential_equalities** := a list of dictionaries, one for each referential equality link annotated <br>
     8.2. **answer** := a list of dictionaries, one for each short answer annotated <br>
