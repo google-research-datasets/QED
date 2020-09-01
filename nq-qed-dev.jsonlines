@@ -971,6 +971,19 @@
                     "bridge": false,
                     "string": "a stern but occasionally dumb American bulldog"
                 }
+            },
+            {
+                "question_reference": {
+                    "start": 25,
+                    "end": 38,
+                    "string": "tom and jerry"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "on",
+                    "string": ""
+                }
             }
         ],
         "answer": [
@@ -2671,7 +2684,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 31,
+                    "end": 69,
+                    "string": "the raid on the harper's ferry arsenal"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -2832,7 +2859,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 37,
+                    "end": 62,
+                    "string": "the human digestive tract"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -3474,6 +3515,19 @@
                     "bridge": false,
                     "string": "Kat"
                 }
+            },
+            {
+                "question_reference": {
+                    "start": 32,
+                    "end": 42,
+                    "string": "eastenders"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
             }
         ],
         "answer": [
@@ -3766,7 +3820,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 27,
+                    "end": 51,
+                    "string": "the 1924 winter olympics"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "at",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -4401,6 +4469,19 @@
                     "bridge": false,
                     "string": "Stumpy"
                 }
+            },
+            {
+                "question_reference": {
+                    "start": 21,
+                    "end": 40,
+                    "string": "the movie rio bravo"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
             }
         ],
         "answer": [
@@ -4864,6 +4945,19 @@
                     "end": 79,
                     "bridge": false,
                     "string": "Daisy Duke"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 25,
+                    "end": 49,
+                    "string": "the new dukes of hazzard"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -5480,7 +5574,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 55,
+                    "end": 63,
+                    "string": "burzahom"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -6019,7 +6127,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 21,
+                    "end": 37,
+                    "string": "the wizard of oz"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -6121,6 +6243,19 @@
                     "end": 348,
                     "bridge": false,
                     "string": "a Bengal tiger"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 27,
+                    "end": 37,
+                    "string": "life of pi"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -6315,6 +6450,19 @@
                     "bridge": false,
                     "string": "The Grasshopper Lies Heavy"
                 }
+            },
+            {
+                "question_reference": {
+                    "start": 26,
+                    "end": 37,
+                    "string": "high castle"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
             }
         ],
         "answer": [
@@ -6466,22 +6614,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [
+        "referential_equalities": [],
+        "answer": [
             {
-                "question_reference": {
-                    "start": 10,
-                    "end": 24,
-                    "string": "2 dollar bills"
-                },
                 "sentence_reference": {
                     "start": 1031,
                     "end": 1039,
                     "bridge": false,
                     "string": "the bill"
+                },
+                "paragraph_reference": {
+                    "start": 1031,
+                    "end": 1039,
+                    "string": "the bill"
                 }
-            }
-        ],
-        "answer": [
+            },
             {
                 "sentence_reference": {
                     "start": 1031,
@@ -6848,6 +6995,19 @@
                     "bridge": false,
                     "string": "Colman"
                 }
+            },
+            {
+                "question_reference": {
+                    "start": 27,
+                    "end": 51,
+                    "string": "where the red fern grows"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
             }
         ],
         "answer": [
@@ -6979,7 +7139,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 9,
+                    "end": 29,
+                    "string": "prince edward island"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "at",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -7384,6 +7558,19 @@
                     "end": 33,
                     "bridge": false,
                     "string": "Cora"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 22,
+                    "end": 38,
+                    "string": "once upon a time"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -8049,6 +8236,19 @@
                     "end": 170,
                     "bridge": false,
                     "string": "Coal"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 37,
+                    "end": 43,
+                    "string": "the us"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -9293,7 +9493,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 33,
+                    "end": 42,
+                    "string": "lion king"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -9410,6 +9624,19 @@
                     "end": 629,
                     "bridge": false,
                     "string": "his mother"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 25,
+                    "end": 34,
+                    "string": "the flash"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -9840,6 +10067,19 @@
                     "bridge": false,
                     "string": "her mum Gwen"
                 }
+            },
+            {
+                "question_reference": {
+                    "start": 26,
+                    "end": 42,
+                    "string": "gavin and stacey"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
             }
         ],
         "answer": [
@@ -10196,7 +10436,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 19,
+                    "end": 27,
+                    "string": "the skin"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -10289,7 +10543,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 9,
+                    "end": 15,
+                    "string": "canada"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -10654,6 +10922,19 @@
                     "end": 218,
                     "bridge": false,
                     "string": "Jack"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 30,
+                    "end": 56,
+                    "string": "nightmare before christmas"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -11075,7 +11356,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 29,
+                    "end": 55,
+                    "string": "the first green revolution"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -11589,7 +11884,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 42,
+                    "end": 48,
+                    "string": "the us"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -11798,7 +12107,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 53,
+                    "end": 61,
+                    "string": "the body"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -12269,7 +12592,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 16,
+                    "end": 30,
+                    "string": "rick and morty"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -12466,7 +12803,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 28,
+                    "end": 50,
+                    "string": "supreme court of india"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -12567,6 +12918,19 @@
                     "end": 20,
                     "bridge": false,
                     "string": "manga"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 36,
+                    "end": 41,
+                    "string": "japan"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -14235,6 +14599,19 @@
                     "bridge": false,
                     "string": "Far From the Home I Love"
                 }
+            },
+            {
+                "question_reference": {
+                    "start": 38,
+                    "end": 57,
+                    "string": "fiddler on the roof"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
             }
         ],
         "answer": [
@@ -14584,7 +14961,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 20,
+                    "end": 32,
+                    "string": "the cn tower"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -14964,7 +15355,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 10,
+                    "end": 30,
+                    "string": "the book small steps"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -15388,7 +15793,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 41,
+                    "end": 68,
+                    "string": "the balkans and middle east"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -15876,7 +16295,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 12,
+                    "end": 30,
+                    "string": "the lost city of z"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -17537,7 +17970,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 18,
+                    "end": 58,
+                    "string": "the classic surfing movie endless summer"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -18022,6 +18469,19 @@
                     "bridge": false,
                     "string": "Kim"
                 }
+            },
+            {
+                "question_reference": {
+                    "start": 26,
+                    "end": 42,
+                    "string": "madeas christmas"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
             }
         ],
         "answer": [
@@ -18201,7 +18661,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 11,
+                    "end": 38,
+                    "string": "sleeping freshmen never lie"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -18611,6 +19085,19 @@
                     "end": 58,
                     "bridge": false,
                     "string": "Riley and Auggie 's father"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 21,
+                    "end": 37,
+                    "string": "girl meets world"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -19857,6 +20344,19 @@
                     "bridge": false,
                     "string": "R / T"
                 }
+            },
+            {
+                "question_reference": {
+                    "start": 21,
+                    "end": 32,
+                    "string": "a dodge car"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "on",
+                    "string": ""
+                }
             }
         ],
         "answer": [
@@ -20140,6 +20640,19 @@
                     "end": 503,
                     "bridge": false,
                     "string": "the blue service uniform"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 36,
+                    "end": 44,
+                    "string": "the army"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -21312,7 +21825,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 37,
+                    "end": 50,
+                    "string": "south america"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -22313,6 +22840,19 @@
                     "end": 212,
                     "bridge": false,
                     "string": "They"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 33,
+                    "end": 43,
+                    "string": "new mexico"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -23501,7 +24041,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 11,
+                    "end": 34,
+                    "string": "the movie proof of life"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -23644,7 +24198,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 47,
+                    "end": 54,
+                    "string": "the nba"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -25535,6 +26103,19 @@
                     "bridge": false,
                     "string": "geomagnetic reversals"
                 }
+            },
+            {
+                "question_reference": {
+                    "start": 0,
+                    "end": 14,
+                    "string": "paleomagnetism"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
             }
         ],
         "answer": [
@@ -26086,7 +26667,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 52,
+                    "end": 84,
+                    "string": "the new kingdom of ancient egypt"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -26254,7 +26849,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 43,
+                    "end": 61,
+                    "string": "the earths surface"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "on",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -29279,6 +29888,19 @@
                     "end": 413,
                     "bridge": false,
                     "string": "Clark"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 34,
+                    "end": 44,
+                    "string": "smallville"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "of",
+                    "string": ""
                 }
             }
         ],
@@ -32724,6 +33346,19 @@
                     "bridge": false,
                     "string": "Decussation"
                 }
+            },
+            {
+                "question_reference": {
+                    "start": 32,
+                    "end": 57,
+                    "string": "the spinothalamic pathway"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
             }
         ],
         "answer": [
@@ -33941,7 +34576,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 11,
+                    "end": 32,
+                    "string": "the movie mothers day"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -34306,6 +34955,19 @@
                     "end": 305,
                     "bridge": false,
                     "string": "Rick"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 34,
+                    "end": 51,
+                    "string": "the first episode"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -34820,10 +35482,10 @@
                     "string": "the virgin"
                 },
                 "sentence_reference": {
-                    "start": 379,
-                    "end": 434,
-                    "bridge": false,
-                    "string": "the Queen 's niece , Jehnna ( Olivia d'Abo ) , a virgin"
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -35966,7 +36628,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 22,
+                    "end": 35,
+                    "string": "walk the line"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -36533,10 +37209,10 @@
                     "string": "zoey"
                 },
                 "sentence_reference": {
-                    "start": 75,
-                    "end": 118,
-                    "bridge": false,
-                    "string": "his girlfriend Zooey Rice ( Rashida Jones )"
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -37181,6 +37857,19 @@
                     "bridge": false,
                     "string": "Wyatt `` Dusty '' Chandler ( George Strait )"
                 }
+            },
+            {
+                "question_reference": {
+                    "start": 19,
+                    "end": 41,
+                    "string": "the movie pure country"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
             }
         ],
         "answer": [
@@ -37803,68 +38492,6 @@
 }
 
 {
-    "example_id": -2306775016318180243,
-    "answer_type": "single_sentence",
-    "title_text": "My Kinsman, Major Molineux",
-    "url": "https://en.wikipedia.org//w/index.php?title=My_Kinsman,_Major_Molineux&amp;oldid=824834115",
-    "question_text": "who is the young man in hawthorne's my kinsman major molineux",
-    "paragraph_text": "In about 1732 , Robin , a youth , arrives by ferry in Boston seeking his kinsman , Major Molineux , an official in the British Colonial government , who has promised him work . Yet no one in town tells him where the major is . A rich man threatens the youth with prison , and an innkeeper calls him a runaway bond - servant . At the inn , he meets a man with a face described as looking like the devil - two protrusions emanating from his forehead ( like horns ) , eyes burning like ' fire in a cave ' - who seems at the center of many evil things . Later , he runs into the man again , but this time his face is painted black and red . After blocking his path with a cudgel , he finally gets the answer that his kinsman will soon pass by . He waits at the spot on the steps of a church where he is greeted by the first polite gentleman he has met all night . Soon , the two men hear the roar of an approaching mob . At its head is the man with the red and black face and in its midst is Major Molineux , tarred and feathered . The crowd is in an uproar , and everyone is laughing . Soon , so is young Robin , as his eyes meet those of the Major , who knows him right away . Disillusioned , the youth asks the gentleman the way back to the ferry . Yet the latter restrains him , saying that it is still possible for him to thrive without his kinsman 's protection .",
-    "sentence_starts": [
-        0,
-        177,
-        227,
-        326,
-        550,
-        637,
-        741,
-        860,
-        917,
-        1028,
-        1083,
-        1175,
-        1248
-    ],
-    "original_nq_answers": null,
-    "annotation": {
-        "referential_equalities": [
-            {
-                "question_reference": {
-                    "start": 7,
-                    "end": 61,
-                    "string": "the young man in hawthorne's my kinsman major molineux"
-                },
-                "sentence_reference": {
-                    "start": 16,
-                    "end": 31,
-                    "bridge": false,
-                    "string": "Robin , a youth"
-                }
-            }
-        ],
-        "answer": [
-            {
-                "sentence_reference": {
-                    "start": 16,
-                    "end": 21,
-                    "bridge": false,
-                    "string": "Robin"
-                },
-                "paragraph_reference": {
-                    "start": 16,
-                    "end": 21,
-                    "string": "Robin"
-                }
-            }
-        ],
-        "selected_sentence": {
-            "start": 0,
-            "end": 177,
-            "string": "In about 1732 , Robin , a youth , arrives by ferry in Boston seeking his kinsman , Major Molineux , an official in the British Colonial government , who has promised him work . "
-        }
-    }
-}
-
-{
     "example_id": 4102709688357090054,
     "answer_type": "single_sentence",
     "title_text": "Three-point field goal",
@@ -38052,7 +38679,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 39,
+                    "end": 48,
+                    "string": "australia"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -38643,6 +39284,19 @@
                     "bridge": false,
                     "string": "the orchestra"
                 }
+            },
+            {
+                "question_reference": {
+                    "start": 28,
+                    "end": 47,
+                    "string": "the romantic period"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "during",
+                    "string": ""
+                }
             }
         ],
         "answer": [
@@ -38693,6 +39347,19 @@
                     "end": 340,
                     "bridge": false,
                     "string": "a stoic rifleman , Walking Boss Godfrey ( Morgan Woodward )"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 30,
+                    "end": 44,
+                    "string": "cool hand luke"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -38970,6 +39637,19 @@
                     "end": 198,
                     "bridge": false,
                     "string": "this tax"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 6,
+                    "end": 38,
+                    "string": "the federal unemployment tax act"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "under",
+                    "string": ""
                 }
             }
         ],
@@ -39788,6 +40468,19 @@
                     "end": 180,
                     "bridge": false,
                     "string": "The title character"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 28,
+                    "end": 41,
+                    "string": "the tv series"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -41497,7 +42190,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 30,
+                    "end": 47,
+                    "string": "anant chaturdashi"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -42394,7 +43101,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 20,
+                    "end": 24,
+                    "string": "mars"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "on",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -42596,7 +43317,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 32,
+                    "end": 41,
+                    "string": "the bible"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -44340,7 +45075,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 11,
+                    "end": 21,
+                    "string": "safe haven"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -44383,7 +45132,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 13,
+                    "end": 43,
+                    "string": "the grinch who stole christmas"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -44855,6 +45618,19 @@
                     "end": 574,
                     "bridge": false,
                     "string": "Poppy"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 19,
+                    "end": 35,
+                    "string": "the beat goes on"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -45699,7 +46475,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 19,
+                    "end": 59,
+                    "string": "the stone sour video say you'll haunt me"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -47406,6 +48196,19 @@
                     "bridge": false,
                     "string": "the Texians"
                 }
+            },
+            {
+                "question_reference": {
+                    "start": 63,
+                    "end": 91,
+                    "string": "the capturing of san antonio"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
             }
         ],
         "answer": [
@@ -48087,7 +48890,21 @@
     ],
     "original_nq_answers": null,
     "annotation": {
-        "referential_equalities": [],
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 15,
+                    "end": 28,
+                    "string": "the quiet man"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
         "answer": [
             {
                 "sentence_reference": {
@@ -48140,6 +48957,19 @@
                     "end": 413,
                     "bridge": false,
                     "string": "Missy"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 20,
+                    "end": 38,
+                    "string": "a bend in the road"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -48194,6 +49024,19 @@
                     "end": 110,
                     "bridge": false,
                     "string": "It"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 33,
+                    "end": 38,
+                    "string": "china"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -49104,6 +49947,19 @@
                     "end": 554,
                     "bridge": false,
                     "string": "The Tam - Tams"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 31,
+                    "end": 39,
+                    "string": "montreal"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
@@ -53206,6 +54062,19 @@
                     "bridge": false,
                     "string": "Mark"
                 }
+            },
+            {
+                "question_reference": {
+                    "start": 26,
+                    "end": 40,
+                    "string": "grey's anatomy"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
             }
         ],
         "answer": [
@@ -53646,64 +54515,6 @@
             "start": 69,
             "end": 179,
             "string": "It acts as a primer , by polymerizing the first few glucose molecules , after which other enzymes take over . "
-        }
-    }
-}
-
-{
-    "example_id": 4510800290541730720,
-    "answer_type": "single_sentence",
-    "title_text": "Dirty Dancing",
-    "url": "https://en.wikipedia.org//w/index.php?title=Dirty_Dancing&amp;oldid=807077800",
-    "question_text": "how old is baby in dirty dancing movie",
-    "paragraph_text": "In the summer of 1963 , 17 - year - old Frances `` Baby '' Houseman ( Jennifer Grey ) is vacationing with her affluent family at Kellerman 's , a resort in the Catskill Mountains . Baby is the younger of two daughters , and plans to attend Mount Holyoke College to study economics in underdeveloped countries and then enter the Peace Corps . Her father , Jake ( Jerry Orbach ) , is the doctor and friend of Max Kellerman ( Jack Weston ) , the resort proprietor . Baby is befriended by Max 's grandson Neil ( Lonny Price ) . Baby develops a crush on the resort 's dance instructor , Johnny Castle ( Patrick Swayze ) . Johnny is the leader of the resort 's working - class entertainment staff . Baby encounters Johnny 's cousin Billy on a walk through the resort grounds , and helps him carry watermelons to the staff quarters . The staff hold secret after - hours parties in their quarters , and Baby is surprised by the `` dirty dancing '' they engage in . Intrigued , Baby receives a brief , impromptu dance lesson from Johnny .",
-    "sentence_starts": [
-        0,
-        181,
-        342,
-        463,
-        524,
-        617,
-        693,
-        827,
-        957
-    ],
-    "original_nq_answers": null,
-    "annotation": {
-        "referential_equalities": [
-            {
-                "question_reference": {
-                    "start": 11,
-                    "end": 15,
-                    "string": "baby"
-                },
-                "sentence_reference": {
-                    "start": 24,
-                    "end": 85,
-                    "bridge": false,
-                    "string": "17 - year - old Frances `` Baby '' Houseman ( Jennifer Grey )"
-                }
-            }
-        ],
-        "answer": [
-            {
-                "sentence_reference": {
-                    "start": 24,
-                    "end": 39,
-                    "bridge": false,
-                    "string": "17 - year - old"
-                },
-                "paragraph_reference": {
-                    "start": 24,
-                    "end": 39,
-                    "string": "17 - year - old"
-                }
-            }
-        ],
-        "selected_sentence": {
-            "start": 0,
-            "end": 181,
-            "string": "In the summer of 1963 , 17 - year - old Frances `` Baby '' Houseman ( Jennifer Grey ) is vacationing with her affluent family at Kellerman 's , a resort in the Catskill Mountains . "
         }
     }
 }
@@ -54702,6 +55513,19 @@
                     "end": 481,
                     "bridge": false,
                     "string": "another , `` G - Baby '' ( DeWayne Warren )"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 21,
+                    "end": 39,
+                    "string": "the movie hardball"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
                 }
             }
         ],
