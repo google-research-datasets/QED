@@ -43,9 +43,9 @@ An **answer** annotation is a pair of spans, a **sentence_reference** and a **pa
 ### Explanation types
 
 Each instance in QED is assigned an **explanation_type** from one of three labels: **single_sentence**, **multi_sentence**, and **none**. 
-*single_sentence instances are cases where there is a short answer in the passage for the provided question, and where there is a valid QED-style explanation for that answer. 
-*multi_sentence instances are cases where there is a valid short answer in the passage, but where explaning that answer requires reasoning over more than one sentence in the paragraph.
-*none instances are cases where an answer was marked in the passage by NQ annotators, but QED annotators found that there was in fact no actually correct answer in the passage.
+* **single_sentence** instances are cases where there is a short answer in the passage for the provided question, and where there is a valid QED-style explanation for that answer. <br>
+* **multi_sentence** instances are cases where there is a valid short answer in the passage, but where explaning that answer requires reasoning over more than one  sentence in the paragraph.<br>
+* **none** instances are cases where an answer was marked in the passage by NQ annotators, but QED annotators found that there was in fact no actually correct answer in the passage.<br>
 
 In the latter two cases, the other **annotation** fields are left empty, but the **original_nq_answer** field is populated.
 
