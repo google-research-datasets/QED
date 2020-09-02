@@ -11,7 +11,7 @@ by Matthew Lamm, Jennimaria Palomaki, Chris Alberti, Daniel Andor, Eunsol Choi, 
 
 ## Data Description
 
-The QED dataset consists of a training set of 7931 examples and a validation set of 1353 examples. These are distributed in JSON Lines format, with one QED example per file. Two files are provided:
+The QED dataset consists of a training set of 7950 examples and a validation set of 1355 examples. These are distributed in JSON Lines format, with one QED example per file. Two files are provided:
 * nq-qed-train.jsonlines (the training set)
 * nq-qed-dev.jsonlines (the validation set)
 
@@ -53,9 +53,9 @@ The breakdown of explanation types in the data is as follows:
 
 |                 |  Train  |  Dev   |
 |---------------- |---------|--------
-| single_sentence |  5,135  |  1,019 |
-| multi_sentence  |  2,010  |   183  |
-| none            |    786  |   151  |
+| single_sentence |  5,154  |  1,021 |
+| multi_sentence  |  2,010  |    183 |
+| none            |    786  |    151 |
 
 ### Disclaimer
 

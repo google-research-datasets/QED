@@ -8134,21 +8134,22 @@
         ]
     ],
     "annotation": {
-        "referential_equalities": [],
-        "answer": [
+        "referential_equalities": [
             {
+                "question_reference": {
+                    "start": 10,
+                    "end": 24,
+                    "string": "2 dollar bills"
+                },
                 "sentence_reference": {
                     "start": 1031,
                     "end": 1039,
                     "bridge": false,
                     "string": "the bill"
-                },
-                "paragraph_reference": {
-                    "start": 1031,
-                    "end": 1039,
-                    "string": "the bill"
                 }
-            },
+            }
+        ],
+        "answer": [
             {
                 "sentence_reference": {
                     "start": 1031,
@@ -47729,6 +47730,83 @@
 }
 
 {
+    "example_id": -2306775016318180243,
+    "title_text": "My Kinsman, Major Molineux",
+    "url": "https://en.wikipedia.org//w/index.php?title=My_Kinsman,_Major_Molineux&amp;oldid=824834115",
+    "question_text": "who is the young man in hawthorne's my kinsman major molineux",
+    "paragraph_text": "In about 1732 , Robin , a youth , arrives by ferry in Boston seeking his kinsman , Major Molineux , an official in the British Colonial government , who has promised him work . Yet no one in town tells him where the major is . A rich man threatens the youth with prison , and an innkeeper calls him a runaway bond - servant . At the inn , he meets a man with a face described as looking like the devil - two protrusions emanating from his forehead ( like horns ) , eyes burning like ' fire in a cave ' - who seems at the center of many evil things . Later , he runs into the man again , but this time his face is painted black and red . After blocking his path with a cudgel , he finally gets the answer that his kinsman will soon pass by . He waits at the spot on the steps of a church where he is greeted by the first polite gentleman he has met all night . Soon , the two men hear the roar of an approaching mob . At its head is the man with the red and black face and in its midst is Major Molineux , tarred and feathered . The crowd is in an uproar , and everyone is laughing . Soon , so is young Robin , as his eyes meet those of the Major , who knows him right away . Disillusioned , the youth asks the gentleman the way back to the ferry . Yet the latter restrains him , saying that it is still possible for him to thrive without his kinsman 's protection .",
+    "sentence_starts": [
+        0,
+        177,
+        227,
+        326,
+        550,
+        637,
+        741,
+        860,
+        917,
+        1028,
+        1083,
+        1175,
+        1248
+    ],
+    "original_nq_answers": [
+        [
+            {
+                "start": 16,
+                "end": 21,
+                "string": "Robin"
+            }
+        ],
+        [
+            {
+                "start": 16,
+                "end": 31,
+                "string": "Robin , a youth"
+            }
+        ]
+    ],
+    "annotation": {
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 7,
+                    "end": 61,
+                    "string": "the young man in hawthorne's my kinsman major molineux"
+                },
+                "sentence_reference": {
+                    "start": 16,
+                    "end": 31,
+                    "bridge": false,
+                    "string": "Robin , a youth"
+                }
+            }
+        ],
+        "answer": [
+            {
+                "sentence_reference": {
+                    "start": 16,
+                    "end": 21,
+                    "bridge": false,
+                    "string": "Robin"
+                },
+                "paragraph_reference": {
+                    "start": 16,
+                    "end": 21,
+                    "string": "Robin"
+                }
+            }
+        ],
+        "explanation_type": "single_sentence",
+        "selected_sentence": {
+            "start": 0,
+            "end": 177,
+            "string": "In about 1732 , Robin , a youth , arrives by ferry in Boston seeking his kinsman , Major Molineux , an official in the British Colonial government , who has promised him work . "
+        }
+    }
+}
+
+{
     "example_id": 4102709688357090054,
     "title_text": "Three-point field goal",
     "url": "https://en.wikipedia.org//w/index.php?title=Three-point_field_goal&amp;oldid=837152094",
@@ -67682,6 +67760,92 @@
             "start": 69,
             "end": 179,
             "string": "It acts as a primer , by polymerizing the first few glucose molecules , after which other enzymes take over . "
+        }
+    }
+}
+
+{
+    "example_id": 4510800290541730720,
+    "title_text": "Dirty Dancing",
+    "url": "https://en.wikipedia.org//w/index.php?title=Dirty_Dancing&amp;oldid=807077800",
+    "question_text": "how old is baby in dirty dancing movie",
+    "paragraph_text": "In the summer of 1963 , 17 - year - old Frances `` Baby '' Houseman ( Jennifer Grey ) is vacationing with her affluent family at Kellerman 's , a resort in the Catskill Mountains . Baby is the younger of two daughters , and plans to attend Mount Holyoke College to study economics in underdeveloped countries and then enter the Peace Corps . Her father , Jake ( Jerry Orbach ) , is the doctor and friend of Max Kellerman ( Jack Weston ) , the resort proprietor . Baby is befriended by Max 's grandson Neil ( Lonny Price ) . Baby develops a crush on the resort 's dance instructor , Johnny Castle ( Patrick Swayze ) . Johnny is the leader of the resort 's working - class entertainment staff . Baby encounters Johnny 's cousin Billy on a walk through the resort grounds , and helps him carry watermelons to the staff quarters . The staff hold secret after - hours parties in their quarters , and Baby is surprised by the `` dirty dancing '' they engage in . Intrigued , Baby receives a brief , impromptu dance lesson from Johnny .",
+    "sentence_starts": [
+        0,
+        181,
+        342,
+        463,
+        524,
+        617,
+        693,
+        827,
+        957
+    ],
+    "original_nq_answers": [
+        [
+            {
+                "start": 24,
+                "end": 39,
+                "string": "17 - year - old"
+            }
+        ],
+        [
+            {
+                "start": 24,
+                "end": 26,
+                "string": "17"
+            }
+        ]
+    ],
+    "annotation": {
+        "referential_equalities": [
+            {
+                "question_reference": {
+                    "start": 11,
+                    "end": 15,
+                    "string": "baby"
+                },
+                "sentence_reference": {
+                    "start": 24,
+                    "end": 85,
+                    "bridge": false,
+                    "string": "17 - year - old Frances `` Baby '' Houseman ( Jennifer Grey )"
+                }
+            },
+            {
+                "question_reference": {
+                    "start": 19,
+                    "end": 38,
+                    "string": "dirty dancing movie"
+                },
+                "sentence_reference": {
+                    "start": -1,
+                    "end": -1,
+                    "bridge": "in",
+                    "string": ""
+                }
+            }
+        ],
+        "answer": [
+            {
+                "sentence_reference": {
+                    "start": 24,
+                    "end": 39,
+                    "bridge": false,
+                    "string": "17 - year - old"
+                },
+                "paragraph_reference": {
+                    "start": 24,
+                    "end": 39,
+                    "string": "17 - year - old"
+                }
+            }
+        ],
+        "explanation_type": "single_sentence",
+        "selected_sentence": {
+            "start": 0,
+            "end": 181,
+            "string": "In the summer of 1963 , 17 - year - old Frances `` Baby '' Houseman ( Jennifer Grey ) is vacationing with her affluent family at Kellerman 's , a resort in the Catskill Mountains . "
         }
     }
 }
