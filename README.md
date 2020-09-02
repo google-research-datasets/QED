@@ -29,10 +29,10 @@ A QED example consists of an example from the [Natural Questions](https://ai.goo
     8.2. **answer** := a list of dictionaries, one for each short answer annotated <br>
     8.3. **selected_sentence** := a dictionary representing the annotated sentence in the passage<br>
     8.4. **explanation_type** : one of "single_sentence", "multi_sentence", or "none"
-    
+
 ### Annotation Format
 
-Each element of a QED annotation, excepting the **explanation_type** (see below), consists of one or more span dictionaries. At a minimum, these contain **start** and **end** (inclusive) character offsets, as well as the **string** associated with the span. 
+Each element of a QED annotation, excepting the **explanation_type** (see below), consists of one or more span dictionaries. At a minimum, these contain **start** and **end** (inclusive) character offsets, as well as the **string** associated with the span.
 
 A **selected_sentence** annotation is a span dictionary representing a supporting sentence in the passage which implies an answer to the question.
 
@@ -42,7 +42,7 @@ An **answer** annotation is a pair of spans, a **sentence_reference** and a **pa
 
 ### Explanation types
 
-Each instance in QED is assigned an **explanation_type** from one of three labels: **single_sentence**, **multi_sentence**, and **none**. 
+Each instance in QED is assigned an **explanation_type** from one of three labels: **single_sentence**, **multi_sentence**, and **none**.
 * **single_sentence** instances are cases where there is a short answer in the passage for the provided question, and where there is a valid QED-style explanation for that answer. <br>
 * **multi_sentence** instances are cases where there is a valid short answer in the passage, but where explaining that answer requires reasoning over more than one  sentence in the paragraph.<br>
 * **none** instances are cases where an answer was marked in the passage by NQ annotators, but QED annotators found that there was in fact no actually correct answer in the passage.<br>
@@ -53,9 +53,9 @@ The breakdown of explanation types in the data is as follows:
 
 |                 |  Train  |  Dev   |
 |---------------- |---------|--------
-| single_sentence |  5,135  |  1,019 | 
-| multi_sentence  |    786  |   151  |
-| none            |  2,010  |   183  | 
+| single_sentence |  5,135  |  1,019 |
+| multi_sentence  |  2,010  |   183  |
+| none            |    786  |   151  |
 
 ### Disclaimer
 
