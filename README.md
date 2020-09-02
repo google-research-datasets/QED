@@ -28,7 +28,7 @@ A QED example consists of an exmple from the [Natural Questions](https://ai.goog
     8.1. **referential_equalities** := a list of dictionaries, one for each referential equality link annotated <br>
     8.2. **answer** := a list of dictionaries, one for each short answer annotated <br>
     8.3. **selected_sentence** := a dictionary representing the annotated sentence in the passage<br>
-    8.4. **answer_type** : one of "single_sentence", "multi_sentence", or "none"
+    8.4. **explanation_type** : one of "single_sentence", "multi_sentence", or "none"
     
 ### Annotation Format
 
@@ -54,8 +54,8 @@ The breakdown of explanation types in the data is as follows:
 |                 |  Train  |  Dev   |
 |---------------- |---------|--------
 | single_sentence |  5,135  |  1,019 | 
-| multi_sentence  |   -     |   -    |
-| none            |   -     |   -    | 
+| multi_sentence  |    786  |   151  |
+| none            |  2,010  |   183  | 
 
 ### Disclaimer
 
