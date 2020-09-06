@@ -54,7 +54,7 @@ The breakdown of explanation types in the data is as follows:
 |                 |  Train  |  Dev   |
 |---------------- |---------|--------
 | single_sentence |  5,154  |  1,021 |
-| multi_sentence  |  2,010  |    183 |
+| multi_sentence  |  1,702  |    183 |
 | none            |    786  |    151 |
 
 ### Disclaimer
