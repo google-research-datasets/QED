@@ -7,11 +7,18 @@ by Matthew Lamm, Jennimaria Palomaki, Chris Alberti, Daniel Andor, Eunsol Choi, 
 
 ## Overview of QED
 
+QED is a linguistically principled framework for explanations in question answering. As presented in the paper, given a question and a passage, QED represents an explanation of the answer as a combination of discrete, human-interpretable steps:
+1. **sentence selection** := identification of a sentence implying an answer to the question
+2. **refential equality** := identification of noun phrases in the question and the answer sentence that refer to the same thing
+3. **predicate entailment** := confirmation that the predicate in the sentence entails the predicate in the question once referential equalities are abstracted away.
+
+These steps are all exhibited in the following example figure from the paper:
+
 
 
 ## Data Description
 
-The QED dataset consists of a training set of 7950 examples and a validation set of 1355 examples. These are distributed in JSON Lines format, with one QED example per file. Two files are provided:
+The QED dataset consists of a training set of 7638 examples and a validation set of 1355 examples. These are distributed in JSON Lines format, with one QED example per line. Two files are provided:
 * nq-qed-train.jsonlines (the training set)
 * nq-qed-dev.jsonlines (the validation set)
 
@@ -60,7 +67,6 @@ The breakdown of explanation types in the data is as follows:
 ### Disclaimer
 
 All of the input data for this task comes from Wikipedia, which is licensed for public use by the Creative Commons Attribution-ShareAlike 3.0 Unported License (CC BY-SA) and the GNU Free Documentation License (GFDL).
-
 
 ## Evaluation Scripts
 
