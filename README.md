@@ -12,7 +12,8 @@ QED is a linguistically principled framework for explanations in question answer
 2. **refential equality** := identification of noun phrases in the question and the answer sentence that refer to the same thing
 3. **predicate entailment** := confirmation that the predicate in the sentence entails the predicate in the question once referential equalities are abstracted away.
 
-Here's a simple example:
+Here's a simple example:<br>
+
 <img src="images/example-figure.png" width="400"/>
 
 The annotation definition, as well as the data, gives careful treatment to bridging -- a significant but oft-ignored form of reference. For example, in the following we note the question reference is a bridged argument of the selected sentence. That means it does not explicitly manifest within the sentence, but nevertheless functions as a semantic argument necessary for interpretation of the sentence's semantics.
