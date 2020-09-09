@@ -27,8 +27,8 @@ Please see the paper for additional statistics and examples from the data.
 ## Data Description
 
 The QED dataset consists of a training set of 7638 examples and a validation set of 1355 examples. These are distributed in JSON Lines format, with one QED example per line. Two files are provided:
-* nq-qed-train.jsonlines (the training set)
-* nq-qed-dev.jsonlines (the validation set)
+* qed-train.jsonlines (the training set)
+* qed-dev.jsonlines (the validation set)
 
 A QED example consists of an example from the [Natural Questions](https://ai.google.com/research/NaturalQuestions) dataset (NQ) and a QED-style explanation annotation where appropriate. It is a dictionary with the following items:
 
