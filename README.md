@@ -9,7 +9,7 @@ by Matthew Lamm, Jennimaria Palomaki, Chris Alberti, Daniel Andor, Eunsol Choi, 
 
 QED is a linguistically principled framework for explanations in question answering. As presented in the paper, given a question and a passage, QED represents an explanation of the answer as a combination of discrete, human-interpretable steps:
 1. **sentence selection** := identification of a sentence implying an answer to the question
-2. **refential equality** := identification of noun phrases in the question and the answer sentence that refer to the same thing
+2. **referential equality** := identification of noun phrases in the question and the answer sentence that refer to the same thing
 3. **predicate entailment** := confirmation that the predicate in the sentence entails the predicate in the question once referential equalities are abstracted away.
 
 Here's a simple example:<br>
@@ -18,7 +18,7 @@ Here's a simple example:<br>
 
 Predicate entailment and referential equality are relations which must hold in order for a sentence to answer an question. Consider if in the selected sentence above, the grammatical subject were not "Howl's Moving Castle", but something else. Then referential equality would be broken, and the sentence wouldn't provide a sound answer to the question. Similarly, if the predicate in the sentence did not mention the word "written" but rather mentioned the word "produced," then again answerhood wouldn't hold. 
 
-The annotation definition of QED gives careful treatment to bridging -- a significant but oft-ignored form of reference. In the following example, the question reference "the first game of the 2017 world series" is a bridged argument of the selected sentence. That is, it is not explicitly manifest within the sentence, but nevertheless is a necessary semantic argument for interpreting the meaning of the sentence.
+The annotation definition of QED gives careful treatment to bridging -- a significant but oft-ignored form of reference. In the following example, the question reference "the first game of the 2017 world series" is a bridged argument of the selected sentence. That is, it is not explicitly manifest within the sentence, but nevertheless is a necessary semantic argument for interpreting its meaning.
 
 <img src="images/bridging-example.png" width="900"/>
 
