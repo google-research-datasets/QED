@@ -70,7 +70,7 @@ The breakdown of explanation types in the data is as follows:
 |---------------- |---------|--------
 | single_sentence |  5,154  |  1,019 |
 | multi_sentence  |  1,702  |    183 |
-| none            |    786  |    151 |
+| none            |    782  |    151 |
 
 ### Disclaimer
 
