@@ -16,7 +16,7 @@ Here's a simple example:<br>
 
 <img src="images/example-figure.png" width="400"/>
 
-The annotation definition, as well as the data, gives careful treatment to bridging -- a significant but oft-ignored form of reference. For example, in the following we note the question reference "the first game of the 2017 world series" is a bridged argument of the selected sentence. That is, it does not explicitly manifest within the sentence, but nevertheless is a necessary semantic argument for interpreting the meaning of the sentence.
+The annotation definition, as well as the data, gives careful treatment to bridging -- a significant but oft-ignored form of reference. In the following example, the question reference "the first game of the 2017 world series" is a bridged argument of the selected sentence. That is, it is not explicitly manifest within the sentence, but nevertheless is a necessary semantic argument for interpreting the meaning of the sentence.
 
 <img src="images/bridging-example.png" width="900"/>
 
