@@ -9,22 +9,26 @@ by Matthew Lamm, Jennimaria Palomaki, Chris Alberti, Daniel Andor, Eunsol Choi, 
 
 QED is a linguistically principled framework for explanations in question answering. As presented in the paper, given a question and a passage, QED represents an explanation of the answer as a combination of discrete, human-interpretable steps:
 1. **sentence selection** := identification of a sentence implying an answer to the question
-2. **refential equality** := identification of noun phrases in the question and the answer sentence that refer to the same thing
+2. **referential equality** := identification of noun phrases in the question and the answer sentence that refer to the same thing
 3. **predicate entailment** := confirmation that the predicate in the sentence entails the predicate in the question once referential equalities are abstracted away.
 
 Here's a simple example:<br>
 
 <img src="images/example-figure.png" width="400"/>
 
-The annotation definition, as well as the data, gives careful treatment to bridging -- a significant but oft-ignored form of reference. For example, in the following we note the question reference "the first game of the 2017 world series" is a bridged argument of the selected sentence. That is, it does not explicitly manifest within the sentence, but nevertheless is a necessary semantic argument for interpreting the meaning of the sentence.
+Predicate entailment and referential equality are relations which must hold in order for a sentence to answer an question. Consider if in the selected sentence above, the grammatical subject were not "Howl's Moving Castle", but something else. Then referential equality would be broken, and the sentence wouldn't provide a sound answer to the question. Similarly, if the predicate in the sentence did not mention the word "written" but rather mentioned the word "produced," then again answerhood wouldn't hold. 
+
+The annotation definition of QED gives careful treatment to bridging -- a significant but oft-ignored form of reference. In the following example, the question reference "the first game of the 2017 world series" is a bridged argument of the selected sentence. That is, it is not explicitly manifest within the sentence, but nevertheless is a necessary semantic argument for interpreting its meaning.
 
 <img src="images/bridging-example.png" width="900"/>
+
+Please see the paper for additional statistics and examples from the data.
 
 ## Data Description
 
 The QED dataset consists of a training set of 7638 examples and a validation set of 1355 examples. These are distributed in JSON Lines format, with one QED example per line. Two files are provided:
-* nq-qed-train.jsonlines (the training set)
-* nq-qed-dev.jsonlines (the validation set)
+* qed-train.jsonlines (the training set)
+* qed-dev.jsonlines (the validation set)
 
 A QED example consists of an example from the [Natural Questions](https://ai.google.com/research/NaturalQuestions) dataset (NQ) and a QED-style explanation annotation where appropriate. It is a dictionary with the following items:
 
@@ -34,12 +38,12 @@ A QED example consists of an example from the [Natural Questions](https://ai.goo
 1. **question_text** := a natural language question string from NQ<br>
 1. **paragraph_text** := a paragraph string from a wikipedia page containing the answer to question<br>
 1. **sentence_starts** := a list of integer character offsets indicating the start of sentences in the paragraph<br>
-1. **original_nq_answers** := <br>
+1. **original_nq_answers** := the original short answer spans from NQ<br>
 1. **annotation** := the QED annotation, a dictionary with the following items and further elaborated upon below: <br>
     8.1. **referential_equalities** := a list of dictionaries, one for each referential equality link annotated <br>
-    8.2. **answer** := a list of dictionaries, one for each short answer annotated <br>
+    8.2. **answer** := a list of dictionaries, one for each short answer span<br>
     8.3. **selected_sentence** := a dictionary representing the annotated sentence in the passage<br>
-    8.4. **explanation_type** : one of "single_sentence", "multi_sentence", or "none"
+    8.4. **explanation_type** := one of "single_sentence", "multi_sentence", or "none"
 
 ### Annotation Format
 
@@ -66,7 +70,7 @@ The breakdown of explanation types in the data is as follows:
 |---------------- |---------|--------
 | single_sentence |  5,154  |  1,021 |
 | multi_sentence  |  1,702  |    183 |
-| none            |    786  |    151 |
+| none            |    782  |    151 |
 
 ### Disclaimer
 
@@ -81,6 +85,48 @@ Example usage of the evaluation scripts can be seen in `qed_eval_test.py`. In or
     pip install absl-py
 
 ## Baseline Results
+
+QED is a general framework for explanations that can be used to define a variety of tasks. In the paper we define four such tasks, and present baseline results for the first two of these.
+
+### Task 1: Recovery of explanations *given* short answer spans
+
+We apply two models to Task 1. The **zero-shot** model is a SpanBERT model pretrained on coreference data, with no training on QED data. The **fine-tuned** model has been additionally fine-tuned on the QED data. We evaluate performance in terms of **mention identification** (a span-level metric) and **mention alignment** (a metric of span pairs).
+
+|Mention Identification|  P  |  R | F1 |
+|----------------------|----|-----|----|
+| zero-shot | 59.0  |  35.6 | 44.4|
+| fine-tuned | 76.8 | 68.8 | 72.6 |
+
+
+|Mention Alignment |  P  |  R | F1 |
+|----------------------|----|-----|--|
+| zero-shot | 47.7  |  28.8 | 35.9 |
+| fine-tuned | 68.4 | 61.3 | 64.6 |
+
+### Task 2: Jointly predicting answers and explanations
+
+We compare three models on Task 2, according to the metrics above and also in terms of answer accuracy. The **QED-only** model is trained only on QED data, but without answers given as they are in Task 1. The **QA-only** model is trained on all of NQ short answer data. The **QED+QA** model is a multi-task model trained on both QED data and NQ short answer data.
+
+We find that **QED+QA** outperforms the **QED-only** model on the metrics of mention identification and mention alignment:
+
+|Mention Identification|  P  |  R | F1 |
+|----------------------|----|-----|----|
+| QED-only | 74.1  |  63.8 | 68.6 |
+| QA+QED | 77.5 | 64.6 | 70.5 |
+
+
+|Mention Alignment |  P  |  R | F1 |
+|----------------------|----|-----|--|
+| QED-only | 63.6  |  54.9 | 58.9 |
+| QA+QED | 68.6 | 57.3 | 62.4 |
+
+We also find that the multitask model outperforms the **QA-only** model on answer accuracy, demonstrating that training with comparably few additional QED explanations still leads to an improvement (+1.1%) on answer accuracy.
+
+|      |   Answer Accuracy| 
+|----------|----|
+| QA-only | 73.4 | 
+| QA+QED | 74.5 |
+
 
 ## Contact
 
