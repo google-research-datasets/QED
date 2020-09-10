@@ -1,32 +1,57 @@
-r"""Methods for evaluationg QED annotation.
+r"""Methods for evaluating QED annotations.
+
+This script is meant to be run in python3. All offsets are unicode char offsets.
+All start char offsets are inclusive and end char offsets are exclusive.
+All strings being operated on are assumed to be of type Text.
 
    Example Usage:
    qed_eval \
      --annotation= \
-     --prediction= \
+     --prediction=
 
-   Both file would be of the following format:
+   Both files should be in the following format:
    {"example_id": -3290814144789249484,
     "paragraph_text": "The first Nobel Prize in Physics was awarded in 1901
-    to Wilhelm Conrad R\u00f6ntgen , of Germany , who received 150,782 SEK ,
-    which is equal to 7,731,004 SEK in December 2007 . John Bardeen is the
-    only laureate to win the prize twice -- in 1956 and 1972 .
-    Maria Sk\u0142odowska - Curie also won two Nobel Prizes , for physics in
-    1903 and chemistry in 1911 . William Lawrence Bragg was , until October 2014
-    , the youngest ever Nobel laureate ; he won the prize in 1915 at the age of
-    25 . Two women have won the prize : Curie and Maria Goeppert - Mayer ( 1963
-    ) . As of 2017 , the prize has been awarded to 206 individuals . There have
-    been six years in which the Nobel Prize in Physics was not awarded (
-    1916 , 1931 , 1934 , 1940 -- 1942 ) .",
+        to Wilhelm Conrad R\u00f6ntgen , of Germany , who received 150,782 SEK ,
+        which is equal to 7,731,004 SEK in December 2007 . John Bardeen is the
+        only laureate to win the prize twice -- in 1956 and 1972 .
+        Maria Sk\u0142odowska - Curie also won two Nobel Prizes , for physics in
+        1903 and chemistry in 1911 . William Lawrence Bragg was , until October
+        2014 , the youngest ever Nobel laureate ; he won the prize in 1915 at
+        the age of 25 . Two women have won the prize : Curie and Maria Goeppert
+        - Mayer ( 1963 ) . As of 2017 , the prize has been awarded to 206
+        individuals . There have been six years in which the Nobel Prize in
+        Physics was not awarded ( 1916 , 1931 , 1934 , 1940 -- 1942 ) .",
     "question_text": "who got the first nobel prize in physics",
     "title_text": "List of Nobel laureates in Physics",
-    "answer_spans": [[56, 78]],
-    "answer_text": ["Wilhelm Conrad R\u00f6ntgen"],
-    "annotation": [{"context_entity_text": "The first Nobel Prize in Physics",
-                    "context_entity_span": [0, 32],
-                    "question_entity_text": "the first nobel prize in physics",
-                    "question_entity_span": [8, 40]}],
-    "answer_type": "single_sentence"}
+    "annotation": {
+        "referential_equalities": [{
+            "question_reference": {
+                "start": 8, "end": 40,
+                "string": "the first nobel prize in physics"
+            },
+            "sentence_reference": {
+                "start": 0, "end": 32, "bridge": false,
+                "string": "The first Nobel Prize in Physics"
+            }}],
+        "answer": [{
+            "sentence_reference": {
+                "start": 56, "end": 78, "bridge": false,
+                "string": "Wilhelm Conrad R\u00f6ntgen"
+            },
+            "paragraph_reference": {
+                "start": 56, "end": 78,
+                "string": "Wilhelm Conrad R\u00f6ntgen"
+            }}]
+        "explanation_type": "single_sentence",
+        "selected_sentence": {
+            "start": 0,
+            "end": 172,
+            "string": "The first Nobel Prize in Physics was awarded in 1901 to
+                Wilhelm Conrad R\u00f6ntgen , of Germany , who received 150,782
+                SEK , which is equal to 7,731,004 SEK in December 2007 . "
+        }
+    }}
 
 
   The output score dict will contain:
@@ -44,32 +69,32 @@ r"""Methods for evaluationg QED annotation.
 import json
 import re
 import string
+from typing import Any, Collection, List, Mapping, Text, Tuple, Union
+
 from absl import app
 from absl import flags
 from absl import logging
-
 import attr
-from typing import Any, Text, List, Mapping, Tuple, Collection
 
 FLAGS = flags.FLAGS
 
 flags.DEFINE_string(
-    'prediction', '/cns/lu-d/home/chrisalberti/rs=8.5/ttl=4y/qed/'
-    'data_2020_04_28_supervised/nq-dev-00-qed.jsonlines',
+    'prediction', 'qed-dev.jsonlines',
     'Path to prediction jsonl file.')
 flags.DEFINE_string(
-    'annotation', '/cns/lu-d/home/chrisalberti/rs=8.5/ttl=4y/qed/'
-    'data_2020_04_28_supervised/nq-dev-00-qed.jsonlines',
+    'annotation', 'qed-dev.jsonlines',
     'Path to annotation jsonl file.')
 flags.DEFINE_bool(
-    'strict', True, 'Whether to enforce strict match'
+    'strict', False, 'Whether to enforce strict match'
     'if false, entity mentions are considered equal'
     'if their mention span overlap AND their mention'
     'span matches after normalization')
 
+MIN_F1_FOR_NON_STRICT_OVERLAP = 0.9
+
 
 def normalize_text(text: Text) -> Text:
-  """Lower text and remove punctuation, articles and extra whitespace."""
+  """Lowercases text and removes punctuation, articles and extra whitespace."""
 
   def remove_articles(s):
     return re.sub(r'\b(a|an|the)\b', ' ', s)
@@ -89,11 +114,16 @@ def normalize_text(text: Text) -> Text:
 
 
 @attr.s(frozen=True)
-class Entity(object):
+class Entity:
   """Entity in either document or query."""
 
-  # start byte offset of entity mention. -1 if bridge element.
+  # Inclusive start char offset of this entity mention. -1 refers to the start
+  # of the answering sentence. The answering sentence is given in the data
+  # as example["annotation"]["selected_sentence"].
   start_offset = attr.ib(type=int)
+
+  # Exclusive end char offset of this entity mention. -1 refers to the entire
+  # answering sentence.
   end_offset = attr.ib(type=int)
   # type must be either context or query.
   type = attr.ib(type=Text)
@@ -110,28 +140,63 @@ class Entity(object):
 
 
 @attr.s
-class QEDExample(object):
+class QEDExample:
   """A single training/test example."""
   example_id = attr.ib(type=int)
   title = attr.ib(type=Text)
   question = attr.ib(type=Text)
-  answer = attr.ib(type=List[Tuple[int, int]])
+  answer = attr.ib(type=List[Entity])
+  nq_answers = attr.ib(type=List[List[Entity]])
   # the first entity is query entity, the second is document entity.
   aligned_nps = attr.ib(type=List[Tuple[Entity, Entity]])
   # either single_sentence or multi_sentence.
-  answer_type = attr.ib(type=Text)
+  explanation_type = attr.ib(type=Text)
+
+
+def load_answer(answer: List[Mapping[Text, Any]]) -> List[Entity]:
+  """Loads annotated QED answer, potentially composed of multiple spans."""
+  output_answer = []
+  for a in answer:
+    output_answer.append(
+        Entity(
+            text=a['paragraph_reference']['string'],
+            normalized_text=normalize_text(a['paragraph_reference']['string']),
+            start_offset=a['paragraph_reference']['start'],
+            end_offset=a['paragraph_reference']['end'],
+            type='context'))
+  return output_answer
+
+
+def load_nq_answers(
+    answer_list: List[List[Mapping[Text, Any]]]) -> List[List[Entity]]:
+  """Loads annotated NQ answers, each potentially composed of multiple spans."""
+  output_answer_list = []
+  for answer in answer_list:
+    output_answer = []
+    for a in answer:
+      output_answer.append(
+          Entity(
+              text=a['string'],
+              normalized_text=normalize_text(a['string']),
+              start_offset=a['start'],
+              end_offset=a['end'],
+              type='context'))
+    output_answer_list.append(output_answer)
+  return output_answer_list
 
 
 def load_aligned_entities(alignment_dict: List[Mapping[Text, Any]],
                           question_text: Text,
                           context_text: Text) -> List[Tuple[Entity, Entity]]:
-  """Load aligned entity from json."""
+  """Loads aligned entities from json."""
   aligned_nps = []
   for single_np_alignment in alignment_dict:
-    q_entity_text = single_np_alignment['question_entity_text']
-    q_entity_offset = single_np_alignment['question_entity_span']
-    c_entity_text = single_np_alignment['context_entity_text']
-    c_entity_offset = single_np_alignment['context_entity_span']
+    q_entity_text = single_np_alignment['question_reference']['string']
+    q_entity_offset = (single_np_alignment['question_reference']['start'],
+                       single_np_alignment['question_reference']['end'])
+    c_entity_text = single_np_alignment['sentence_reference']['string']
+    c_entity_offset = (single_np_alignment['sentence_reference']['start'],
+                       single_np_alignment['sentence_reference']['end'])
     if q_entity_text != question_text[q_entity_offset[0]:q_entity_offset[1]]:
       logging.error(
           'Question entity offset not proper. from text: %s, from byte offset %s',
@@ -168,19 +233,22 @@ def load_aligned_entities(alignment_dict: List[Mapping[Text, Any]],
 
 
 def load_single_line(elem: Mapping[Text, Any]) -> QEDExample:
+  """Loads a QEDExample from json."""
   return QEDExample(
       example_id=elem['example_id'],
       title=elem['title_text'],
       question=elem['question_text'],
-      answer=elem['answer_spans'],
-      aligned_nps=load_aligned_entities(elem['annotation'],
-                                        elem['question_text'],
-                                        elem['paragraph_text']),
-      answer_type=elem['answer_type'])
+      answer=load_answer(elem['annotation'].get('answer', [])),
+      nq_answers=load_nq_answers(elem['original_nq_answers']),
+      aligned_nps=load_aligned_entities(
+          elem['annotation'].get('referential_equalities', []),
+          elem['question_text'],
+          elem['paragraph_text']),
+      explanation_type=elem['annotation']['explanation_type'])
 
 
 def load_data(fname: Text) -> Mapping[int, QEDExample]:
-  """Load jsonl data and outputs dictionary mapping example_id to QEDExample."""
+  """Loads jsonl data and outputs a dict mapping example_id to QEDExample."""
   output_dict = {}
   incorrectly_formatted = 0
   with open(fname) as f:
@@ -188,7 +256,8 @@ def load_data(fname: Text) -> Mapping[int, QEDExample]:
       try:
         elem = json.loads(line)
         example = load_single_line(elem)
-        output_dict[example.example_id] = example
+        if example.explanation_type == 'single_sentence':
+          output_dict[example.example_id] = example
       except ValueError:
         incorrectly_formatted += 1
   logging.info('%d examples not correctly formatted and skipped.',
@@ -196,21 +265,29 @@ def load_data(fname: Text) -> Mapping[int, QEDExample]:
   return output_dict
 
 
-def overlap(ent1: Entity, ent2: Entity):
-  if ent2.start_offset == -1 and ent1.start_offset == -1:
-    return True
-  if ent2.start_offset < ent1.end_offset:
-    if ent1.end_offset > ent2.start_offset:
-      return True
-  elif ent1.start_offset < ent2.end_offset:
-    if ent2.end_offset > ent1.start_offset:
-      return True
-  return False
+def overlap(ent1: Entity, ent2: Entity) -> bool:
+  """Returns whether two entities overlap at least with 90% F1."""
+  if (ent1.start_offset == -1 or ent1.end_offset == -1 or
+      ent2.start_offset == -1 or ent2.end_offset == -1):
+    return (ent1.start_offset, ent1.end_offset, ent2.start_offset,
+            ent2.end_offset) == (-1, -1, -1, -1)
+
+  # Compute F1 as follows:
+  #   F1 = tp / (tp + (fp + fn) / 2)
+  #   [------ ent1 --------]
+  #             [------- ent2 -----]
+  #   [-- fn --][--- tp ---][- fp -]
+  tp = abs(ent1.end_offset - ent2.start_offset)
+  fn = abs(ent2.start_offset - ent1.start_offset)
+  fp = abs(ent2.end_offset - ent1.end_offset)
+  f1 = tp / (tp + (fp + fn) / 2) if tp else 0.0
+  return f1 >= MIN_F1_FOR_NON_STRICT_OVERLAP
 
 
 def compute_mention_score(annotation: Collection[Entity],
-                          prediction: Collection[Entity], strict: bool):
-  """Mention identification performance."""
+                          prediction: Collection[Entity],
+                          strict: bool) -> Tuple[float, float, float]:
+  """Computes mention identification performance."""
   if strict:
     annot_entities = set([ent for ent in annotation if ent.start_offset != -1])
     pred_entities = set([ent for ent in prediction if ent.start_offset != -1])
@@ -235,8 +312,8 @@ def compute_mention_score(annotation: Collection[Entity],
 
 
 def compute_alignment_score(annotation: QEDExample, prediction: QEDExample,
-                            strict: bool):
-  """Compute the alignment match score."""
+                            strict: bool) -> Tuple[float, float, float]:
+  """Computes the alignment match score."""
   if strict:
     annot_pairs = set(annotation.aligned_nps)
     pred_pairs = set(prediction.aligned_nps)
@@ -262,7 +339,8 @@ def compute_alignment_score(annotation: QEDExample, prediction: QEDExample,
   return tp, tn, fn
 
 
-def compute_prf1(tp, tn, fn):
+def compute_prf1(tp, tn, fn) -> Tuple[float, float, float]:
+  """Computes precistion, recall and f1 from true/false positives/negatives."""
   if tp > 0:
     p, r = tp / (tp + fn), tp / (tp + tn)
     f1 = 2 * p * r / (p + r)
@@ -271,14 +349,45 @@ def compute_prf1(tp, tn, fn):
   return p, r, f1
 
 
-def compute_scores(annotation_dict: Mapping[int, QEDExample],
-                   prediction_dict: Mapping[int, QEDExample], strict: bool):
+def is_permutation_matrix(matrix: List[List[bool]]) -> bool:
+  """Returns whether the given boolean matrix is a permutation matrix."""
+  return (all(sum(v) == 1 for v in matrix) and
+          sum(any(v) for v in matrix) == len(matrix))
+
+
+def compute_answer_accuracy(annotation: QEDExample, prediction: QEDExample,
+                            strict: bool) -> float:
+  """Checks whether the predicted answer matches any of the annotated ones."""
+  for annot_answer in [annotation.answer] + annotation.nq_answers:
+    all_matches = []
+    for a in annot_answer:
+      all_matches.append([])
+      for p in prediction.answer:
+        if strict:
+          all_matches[-1].append(a == p)
+        else:
+          all_matches[-1].append(overlap(a, p))
+
+    # The all_matches matrix should basically a permutation matrix.
+    if is_permutation_matrix(all_matches):
+      return 1.0
+
+  return 0.0
+
+
+def compute_scores(
+    annotation_dict: Mapping[int,
+                             QEDExample], prediction_dict: Mapping[int,
+                                                                   QEDExample],
+    strict: bool) -> Mapping[Text, Union[float, Tuple[float, float, float]]]:
   """Compute scores."""
   score_dict = {}
   total_q_tp, total_q_tn, total_q_fn = 0, 0, 0
   total_c_tp, total_c_tn, total_c_fn = 0, 0, 0
   total_pair_tp, total_pair_tn, total_pair_fn = 0, 0, 0
   completely_correct_example_count = 0.0
+  total_correct_answers = 0
+  total_answers = 0
   for example_id in annotation_dict:
     if example_id not in prediction_dict:
       logging.info('Missing prediction for id %d', example_id)
@@ -293,6 +402,9 @@ def compute_scores(annotation_dict: Mapping[int, QEDExample],
           [nps[1] for nps in prediction.aligned_nps], strict)
       pair_tp, pair_tn, pair_fn = compute_alignment_score(
           annotation, prediction, strict)
+      total_correct_answers += compute_answer_accuracy(annotation, prediction,
+                                                       strict)
+      total_answers += 1
       if pair_tn + pair_fn == 0:
         completely_correct_example_count += 1
       total_q_tp += q_tp
@@ -323,7 +435,8 @@ def compute_scores(annotation_dict: Mapping[int, QEDExample],
       'context_mention':
           (context_mention_p, context_mention_r, context_mention_f1),
       'all_mention': (mention_p, mention_r, mention_f1),
-      'pair': (pair_p, pair_r, pair_f1)
+      'pair': (pair_p, pair_r, pair_f1),
+      'answer_accuracy': (total_correct_answers / total_answers)
   }
   logging.info('Question mention P/R/F1 %.4f %.4f %.4f', question_mention_p,
                question_mention_r, question_mention_f1)
@@ -347,6 +460,4 @@ def main(argv):
 
 
 if __name__ == '__main__':
-  flags.mark_flag_as_required('annotation')
-  flags.mark_flag_as_required('prediction')
   app.run(main)
