@@ -2,7 +2,8 @@
 
 This page contains the data and evaluation scripts associated with the paper:
 
-**QED: A Framework and Dataset for Explanations in Question Answering**<br>
+https://arxiv.org/abs/2009.06354 \
+**QED: A Framework and Dataset for Explanations in Question Answering** \
 by Matthew Lamm, Jennimaria Palomaki, Chris Alberti, Daniel Andor, Eunsol Choi, Livio Baldini Soares, Michael Collins
 
 ## Overview of QED
