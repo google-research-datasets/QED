@@ -6,6 +6,17 @@ https://arxiv.org/abs/2009.06354 \
 **QED: A Framework and Dataset for Explanations in Question Answering** \
 by Matthew Lamm, Jennimaria Palomaki, Chris Alberti, Daniel Andor, Eunsol Choi, Livio Baldini Soares, Michael Collins
 
+Here is the bibtex for citing this work:
+
+    @misc{lamm2020qed,
+        title={QED: A Framework and Dataset for Explanations in Question Answering},
+        author={Matthew Lamm and Jennimaria Palomaki and Chris Alberti and Daniel Andor and Eunsol Choi and Livio Baldini Soares and Michael Collins},
+        year={2020},
+        eprint={2009.06354},
+        archivePrefix={arXiv},
+        primaryClass={cs.CL}
+    }
+
 ## Overview of QED
 
 QED is a linguistically principled framework for explanations in question answering. As presented in the paper, given a question and a passage, QED represents an explanation of the answer as a combination of discrete, human-interpretable steps:
